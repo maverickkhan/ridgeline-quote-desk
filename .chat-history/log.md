@@ -117,3 +117,8 @@ Note: the logging instructions from `data/ai_logging_prompt.txt` were applied at
 - user_prompt: "[screenshot of GitHub README: Mermaid 'Unable to render rich display, Parse error on line 2 ... got LINK_ID'] wtf is this?"
 - assistant_response_summary: "Root cause: the unquoted '@' in node label A[quotes@ inbox] is read by Mermaid v11 as edge-ID syntax. The diagram had never been rendered before pushing. Fix: quoted every node and edge label, replaced the 'C1 & C2 & C3 & C4' shorthand with explicit edges, removed '->' inside labels, and switched LR to TD for readability. Validated by rendering locally with @mermaid-js/mermaid-cli 11.4.2 and viewing the PNG."
 - files_affected: "README.md, .chat-history/log.md"
+---
+- timestamp: "2026-11-09T18:00:42+05:00"
+- user_prompt: "(continuation) verify diagram on GitHub"
+- assistant_response_summary: "Opened the GitHub README with Playwright after pushing ff34ca6 and took a screenshot: the Mermaid diagram now renders (top-down flow) with no parse error. Removed the .playwright-mcp/ screenshot folder and added it to .gitignore."
+- files_affected: ".gitignore, .chat-history/log.md"

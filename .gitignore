@@ -18,3 +18,4 @@ check_report.json
 
 # llm response cache
 .cache/
+.playwright-mcp/
