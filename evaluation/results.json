@@ -1,0 +1,103 @@
+{
+  "threshold": 0.85,
+  "extraction_accuracy": 1.0,
+  "match_precision": 1.0,
+  "match_recall": 1.0,
+  "additional_metrics": {
+    "quantity_accuracy": 1.0,
+    "unit_accuracy": 1.0,
+    "as_written_similarity_mean": 0.833,
+    "line_count_match": 1.0,
+    "customer_id_accuracy": 1.0,
+    "correct_abstention_rate": 1.0,
+    "review_rate": 0.211,
+    "auto_accept_precision": 1.0,
+    "auto_accepted_errors": 0,
+    "threshold_sweep": [
+      {
+        "threshold": 0.5,
+        "auto_accept_rate": 0.895,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.55,
+        "auto_accept_rate": 0.895,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.6,
+        "auto_accept_rate": 0.895,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.65,
+        "auto_accept_rate": 0.895,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.7,
+        "auto_accept_rate": 0.895,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.75,
+        "auto_accept_rate": 0.842,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.8,
+        "auto_accept_rate": 0.842,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.85,
+        "auto_accept_rate": 0.842,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.9,
+        "auto_accept_rate": 0.789,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      },
+      {
+        "threshold": 0.95,
+        "auto_accept_rate": 0.474,
+        "auto_accept_precision": 1.0,
+        "auto_accepted_errors": 0
+      }
+    ],
+    "per_rfq": {
+      "rfq_01_email": {
+        "extraction_accuracy": 1.0,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "lines_expected": 5,
+        "lines_predicted": 5
+      },
+      "rfq_02_clearwater": {
+        "extraction_accuracy": 1.0,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "lines_expected": 6,
+        "lines_predicted": 6
+      },
+      "rfq_03_tricounty": {
+        "extraction_accuracy": 1.0,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "lines_expected": 8,
+        "lines_predicted": 8
+      }
+    },
+    "errors": []
+  }
+}

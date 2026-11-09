@@ -15,3 +15,6 @@ ridgeline-quote-desk.zip
 check_report.json
 
 .DS_Store
+
+# llm response cache
+.cache/

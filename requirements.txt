@@ -1,0 +1,6 @@
+google-genai
+python-dotenv
+pdfplumber
+openpyxl
+rapidfuzz
+pydantic
