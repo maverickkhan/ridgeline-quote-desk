@@ -15,7 +15,7 @@
       "flags": [
         "modified_in_thread"
       ],
-      "note": "Changed from 3 HP to 5 HP per thread instructions."
+      "note": "Changed from 3 HP to 5 HP per Rick Dawson's email."
     },
     {
       "line": 2,
@@ -29,7 +29,7 @@
       "flags": [
         "modified_in_thread"
       ],
-      "note": "Quantity increased from 20 to 40 per thread instructions."
+      "note": "Quantity increased from 20 to 40 per Rick Dawson's email."
     },
     {
       "line": 3,
