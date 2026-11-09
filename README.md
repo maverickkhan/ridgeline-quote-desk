@@ -84,27 +84,30 @@ LLM responses are cached in `.cache/llm/` (gitignored), so re-runs are fast and 
 ## Production
 
 ```mermaid
-flowchart LR
-  A[quotes@ inbox] --> B[Ingest + format router]
-  B -->|txt / eml| C1[Text reader]
-  B -->|pdf| C2[pdfplumber]
-  B -->|xlsx / csv| C3[openpyxl rows]
-  B -->|image| C4[Vision / OCR - stub today]
-  B -->|unknown format| Q[Review queue: whole RFQ, reason]
-  C1 & C2 & C3 & C4 --> D[Gemini structured extraction<br/>Vertex AI us-central1]
-  D --> E{Schema + grounding + unit checks}
-  E -->|fail after retry| Q
-  E -->|ok| F[Matching cascade<br/>RL PN > cross-ref > description > LLM shortlist]
-  F --> G[Confidence + flags -> needs_review]
-  G --> H[Draft in quote specialist UI]
+flowchart TD
+  A["quotes@ inbox"] --> B["Ingest + format router"]
+  B -->|"txt / eml"| C1["Text reader"]
+  B -->|"pdf"| C2["pdfplumber"]
+  B -->|"xlsx / csv"| C3["openpyxl rows"]
+  B -->|"image"| C4["Vision / OCR (stub today)"]
+  B -->|"unknown format"| Q["Review queue: whole RFQ + reason"]
+  C1 --> D["Gemini structured extraction<br/>Vertex AI us-central1"]
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  D --> E{"Schema + grounding + unit checks"}
+  E -->|"fail after retry"| Q
+  E -->|"ok"| F["Matching cascade<br/>RL PN, cross-ref, description, LLM shortlist"]
+  F --> G["Confidence + flags decide needs_review"]
+  G --> H["Draft in quote specialist UI"]
   Q --> H
-  H --> I[Specialist reviews, corrects, approves]
-  I --> J[Pricing + stock from ERP]
-  J --> K[Quote sent by a person]
-  I -->|corrections| L[(Feedback store)]
-  L --> M[Cross-ref sheet updates<br/>+ labelled eval set]
+  H --> I["Specialist reviews, corrects, approves"]
+  I --> J["Pricing + stock from ERP"]
+  J --> K["Quote sent by a person"]
+  I -->|"corrections"| L[("Feedback store")]
+  L --> M["Cross-ref sheet updates<br/>+ labelled eval set"]
   M --> F
-  G --> N[Metrics + alerts]
+  G --> N["Metrics + alerts"]
   I --> N
 ```
 

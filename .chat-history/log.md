@@ -112,3 +112,8 @@ Note: the logging instructions from `data/ai_logging_prompt.txt` were applied at
 - user_prompt: "(answers) identity: it should be maverickkhan user; co-author: remove it; force-push: yes"
 - assistant_response_summary: "Set repo-local git identity maverickkhan <57320922+maverickkhan@users.noreply.github.com>; global ~/.gitconfig untouched. Committed the pending log, then rewrote all 4 commits with git filter-branch (author and committer set to maverickkhan, Co-Authored-By: Claude lines removed via msg-filter). Verified the tree is identical to the pre-rewrite backup. Force-pushed main with --force-with-lease and removed the backup refs. Future commits in this repo will use this identity and carry no Claude trailer, per the user."
 - files_affected: ".git/config (local user.name/email), git history of main, .chat-history/log.md"
+---
+- timestamp: "2026-11-09T18:00:08+05:00"
+- user_prompt: "[screenshot of GitHub README: Mermaid 'Unable to render rich display, Parse error on line 2 ... got LINK_ID'] wtf is this?"
+- assistant_response_summary: "Root cause: the unquoted '@' in node label A[quotes@ inbox] is read by Mermaid v11 as edge-ID syntax. The diagram had never been rendered before pushing. Fix: quoted every node and edge label, replaced the 'C1 & C2 & C3 & C4' shorthand with explicit edges, removed '->' inside labels, and switched LR to TD for readability. Validated by rendering locally with @mermaid-js/mermaid-cli 11.4.2 and viewing the PNG."
+- files_affected: "README.md, .chat-history/log.md"
